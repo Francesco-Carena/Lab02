@@ -24,7 +24,7 @@ while(flag):
             print(f"La traduzione della parola cercata è: {trovata}")
 
     if txtIn == 3:
-        txtIn = input().lower()
+        txtIn = input("inserisci la parola da cercare, con al amssimo 1 '?': ").lower()
         t.handleWildCard(txtIn)
 
     if txtIn == 4:

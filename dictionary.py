@@ -11,18 +11,19 @@ class Dictionary:
         return self.parole[ricercata]
 
     def translateWordWildCard(self,query: str):
-        trovate:[]
+        flag = False
         for parola in self.parole:
-            flag=False
             if len(parola) == len(query):
                 corrisponde = True
                 for i in range(len(query)):
                     if query[i] != "?" and query[i] != parola[i]:
                         corrisponde = False
                         break
+
                 if corrisponde:
-                    flag=True
+                    flag = True
+                    traduzioni = self.parole[parola]
                     traduzioni_unite = ", ".join(traduzioni)
                     print(f"Match trovato per '{parola}': {traduzioni_unite}")
-            if not flag:
-                print("nessun match trovato")
+        if not flag:
+            print("Nessun match trovato")

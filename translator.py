@@ -46,13 +46,11 @@ class Translator:
     def handleWildCard(self,query):
         # query is a string with a ? --> <par?la_aliena>
         if query.count("?") != 1:
-            print("Errore: la ricerca con wildcard deve contenere esattamente un carattere '?'.")
+            print("Errore: la ricerca con wildcard deve contenere esattamente un carattere '?'")
             return
 
-            # 2. CONTROLLO ALFABETICO: Rimuovo temporaneamente il "?" per assicurarmi
-            # che tutto il resto sia composto solo da lettere
         if not query.replace("?", "").isalpha():
-            print("Errore: la parola può contenere solo lettere e un singolo '?'.")
+            print("Errore: la parola può contenere solo lettere")
             return
 
         return self.dizionario.translateWordWildCard(query)
