@@ -26,5 +26,3 @@ class Dictionary:
                     print(f"Match trovato per '{parola}': {traduzioni_unite}")
             if not flag:
                 print("nessun match trovato")
-
-        return trovate
