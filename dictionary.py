@@ -1,12 +1,30 @@
 class Dictionary:
     def __init__(self):
-        pass
+        self.parole={}
 
-    def addWord(self):
-        pass
+    def addWord(self, parola):
+        parola=parola.strip().split(" ")
+        self.parole[parola[0]]=[]
+        self.parole[parola[0]].append(parola[1])
 
-    def translate(self):
-        pass
+    def translate(self, ricercata):
+        return self.parole[ricercata]
 
-    def translateWordWildCard(self):
-        pass
+    def translateWordWildCard(self,query: str):
+        trovate:[]
+        for parola in self.parole:
+            flag=False
+            if len(parola) == len(query):
+                corrisponde = True
+                for i in range(len(query)):
+                    if query[i] != "?" and query[i] != parola[i]:
+                        corrisponde = False
+                        break
+                if corrisponde:
+                    flag=True
+                    traduzioni_unite = ", ".join(traduzioni)
+                    print(f"Match trovato per '{parola}': {traduzioni_unite}")
+            if not flag:
+                print("nessun match trovato")
+
+        return trovate
